@@ -415,3 +415,15 @@ footer,
 h1, h2 {
   color: #fff;
 }
+
+/* Компактные облачка сообщений */
+#messages .msg {
+  width: fit-content !important;
+  max-width: 88% !important;
+}
+
+#messages .msg-content {
+  flex: 0 1 auto !important;
+  min-width: 0;
+  width: auto;
+}
