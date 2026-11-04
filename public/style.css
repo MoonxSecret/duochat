@@ -128,7 +128,12 @@ button {
   border-radius: 14px;
 }
 
+
 .msg {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  width: fit-content;
   max-width: 88%;
   padding: 10px 12px;
   border-radius: 14px;
@@ -140,8 +145,10 @@ button {
 
 .msg.mine {
   margin-left: auto;
+  flex-direction: row-reverse;
   background: #e5ddff;
 }
+
 
 .msg .by {
   font-size: 11px;
