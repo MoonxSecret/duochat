@@ -275,9 +275,11 @@ button:disabled { opacity: .6; }
 }
 
 .avatar-button.small i {
-  width: 18px;
-  height: 18px;
+  width: 19px;
+  height: 19px;
   font-size: 11px;
+  right: -2px;
+  bottom: -2px;
 }
 
 /* Сообщения */
