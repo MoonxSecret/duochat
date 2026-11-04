@@ -318,4 +318,93 @@ bottom: 1px;
 
 input[type="file"][hidden] {
   display: none !important;
+/* DUOCHAT — PURPLE GLASS THEME */
+
+body {
+  background:
+    radial-gradient(ellipse at 50% 0%, #39205f 0%, transparent 55%),
+    linear-gradient(160deg, #100b20, #1b1030 55%, #0c0918) !important;
+  color: #f8f1ff;
+}
+
+.panel {
+  background: rgba(35, 22, 58, 0.62);
+  border: 1px solid rgba(207, 160, 255, 0.28);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255,255,255,0.12);
+}
+
+.profile-picker,
+.chat-profile {
+  background: rgba(177, 119, 255, 0.12);
+  border: 1px solid rgba(211, 166, 255, 0.28);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+input,
+textarea {
+  background: rgba(255,255,255,0.07);
+  color: white;
+  border: 1px solid rgba(207,160,255,0.35);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #b9a9ce;
+}
+
+button:not(.avatar-button) {
+  box-shadow: 0 4px 18px rgba(143, 65, 255, 0.2);
+}
+
+button:not(.secondary):not(.tiny):not(.avatar-button) {
+  background: linear-gradient(110deg, #d45cff, #8734e9, #6325c9);
+}
+
+.secondary {
+  background: rgba(255,255,255,0.08);
+  color: #f1dcff;
+  border: 1px solid rgba(211,166,255,0.55);
+}
+
+#messages {
+  background: rgba(12, 7, 25, 0.38);
+  border: 1px solid rgba(190,140,255,0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.msg {
+  background: rgba(151, 104, 211, 0.20);
+  border: 1px solid rgba(207,160,255,0.18);
+  color: #fff;
+}
+
+.msg.mine {
+  background: linear-gradient(
+    135deg,
+    rgba(174, 78, 255, 0.48),
+    rgba(104, 43, 190, 0.48)
+  );
+  border: 1px solid rgba(220,170,255,0.42);
+}
+
+header p,
+.hint,
+footer,
+.avatar-copy span,
+.chat-profile span {
+  color: #c1afd8;
+}
+
+h1, h2 {
+  color: #fff;
+}
+
 }
