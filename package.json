@@ -1,6 +1,6 @@
 {
   "name": "duochat",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -15,7 +15,8 @@
     "@capacitor/core": "^6.2.0",
     "express": "^4.21.2",
     "socket.io": "^4.8.1",
-    "socket.io-client": "^4.8.1"
+    "socket.io-client": "^4.8.1",
+    "pg": "^8.13.1"
   },
   "devDependencies": {
     "@capacitor/cli": "^6.2.0",
