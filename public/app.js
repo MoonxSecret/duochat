@@ -14,10 +14,25 @@ const dbPromise=new Promise((resolve,reject)=>{
 async function save(msg){const db=await dbPromise;return new Promise(resolve=>{const tx=db.transaction("messages","readwrite");tx.objectStore("messages").put(msg);tx.oncomplete=resolve;});}
 async function history(room){const db=await dbPromise;return new Promise(resolve=>{const r=db.transaction("messages").objectStore("messages").getAll();r.onsuccess=()=>resolve(r.result.filter(m=>m.room===room).sort((a,b)=>a.createdAt-b.createdAt));});}
 
-function setAvatar(imgId,placeholderId,avatar){
- const img=$(imgId),placeholder=$(placeholderId);
- if(avatar){img.src=avatar;img.hidden=false;placeholder.hidden=true;}
- else{img.removeAttribute("src");img.hidden=true;placeholder.hidden=false;}
+function setAvatar(imgId, placeholderId, avatar) {
+  const img = $(imgId);
+  const placeholder = $(placeholderId);
+
+  if (!img || !placeholder) return;
+
+  if (avatar) {
+    img.src = avatar;
+    img.hidden = false;
+    img.style.display = "block";
+    placeholder.hidden = true;
+    placeholder.style.display = "none";
+  } else {
+    img.removeAttribute("src");
+    img.hidden = true;
+    img.style.display = "none";
+    placeholder.hidden = false;
+    placeholder.style.display = "grid";
+  }
 }
 function applyProfile(p){
  if(!p||!p.userId)return;
