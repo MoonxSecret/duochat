@@ -23,15 +23,13 @@ function setAvatar(imgId, placeholderId, avatar) {
   if (avatar) {
     img.src = avatar;
     img.hidden = false;
-    img.style.display = "block";
+    img.style.removeProperty("display");
     placeholder.hidden = true;
-    placeholder.style.display = "none";
   } else {
     img.removeAttribute("src");
     img.hidden = true;
-    img.style.display = "none";
+    img.style.setProperty("display", "none", "important");
     placeholder.hidden = false;
-    placeholder.style.display = "grid";
   }
 }
 function applyProfile(p){
