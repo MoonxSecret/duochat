@@ -17,6 +17,7 @@ async function enter(room){currentRoom=room.toUpperCase();myName=$("name").value
  (await history(currentRoom)).forEach(render);if(socket.connected)socket.emit("room:join",{room:currentRoom,name:myName});}
 socket.on("connect",()=>{$("connection").textContent="● онлайн";$("connection").style.color="#218653";if(currentRoom)socket.emit("room:join",{room:currentRoom,name:myName});});
 socket.on("disconnect",()=>{$("connection").textContent="● нет связи";$("connection").style.color="#b34a4a";});
+socket.on("room:history",async messages=>{for(const msg of messages||[]){await save(msg);render(msg);}});
 socket.on("chat:message",async msg=>{msg.room=currentRoom;await save(msg);render(msg);});
 socket.on("member:joined",m=>render({id:crypto.randomUUID(),name:"Система",text:`${m.name} присоединился(ась)`,kind:"system",createdAt:Date.now()}));
 socket.on("member:left",m=>render({id:crypto.randomUUID(),name:"Система",text:`${m.name} вышел(ла)`,kind:"system",createdAt:Date.now()}));
