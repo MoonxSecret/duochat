@@ -318,6 +318,8 @@ bottom: 1px;
 
 input[type="file"][hidden] {
   display: none !important;
+}
+
 /* DUOCHAT — PURPLE GLASS THEME */
 
 body {
@@ -405,6 +407,4 @@ footer,
 
 h1, h2 {
   color: #fff;
-}
-
 }
