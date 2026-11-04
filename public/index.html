@@ -1,16 +1,39 @@
-<!doctype html><html lang="ru"><head>
+<!doctype html>
+<html lang="ru">
+<head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#6750d8"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="DuoChat"><link rel="manifest" href="/manifest.webmanifest">
-<link rel="stylesheet" href="/style.css"><title>DuoChat</title></head><body>
-<main class="app"><header><div class="logo">D</div><div><h1>DuoChat</h1><p>Ваш общий чат с ИИ</p></div><span id="connection" class="status">● подключение…</span></header>
-<section id="setup" class="panel"><h2>Начать общение</h2>
-<label>Твоё имя<input id="name" maxlength="32" placeholder="Например, Алексей"></label>
-<label>Код комнаты<input id="room" maxlength="12" placeholder="Например, DUO123" autocapitalize="characters"></label>
-<div class="actions"><button id="create">Создать комнату</button><button id="join" class="secondary">Войти по коду</button></div>
-<p class="hint">Создай комнату и отправь другу код. Оба должны быть онлайн одновременно: сервер пересылает сообщения, но не хранит их.</p></section>
-<section id="chat" class="panel hidden"><div class="roombar"><div>Комната <b id="roomLabel"></b><button id="copy" class="tiny">Копировать код</button></div><button id="leave" class="secondary tiny">Выйти</button></div>
-<div id="messages" aria-live="polite"></div><div class="composer"><textarea id="text" rows="2" maxlength="4000" placeholder="Напиши сообщение…"></textarea><button id="send">Отправить</button></div>
-<button id="askAI" class="ai">Спросить ИИ по переписке</button><p class="hint">История сохраняется в браузере на этом устройстве. На другом телефоне она появится только для сообщений, отправленных после подключения.</p></section>
-<footer>DuoChat · версия 0.2 · ранний прототип</footer></main>
+<link rel="stylesheet" href="/style.css"><title>DuoChat</title></head>
+<body><main class="app">
+<header><div class="logo">D</div><div><h1>DuoChat</h1><p>Ваш общий чат с ИИ</p></div><span id="connection" class="status">● подключение…</span></header>
+<section id="setup" class="panel">
+  <div class="profile-picker">
+    <button id="avatarButton" class="avatar-button" type="button" aria-label="Выбрать аватарку">
+      <img id="avatarPreview" alt="Твоя аватарка" hidden>
+      <span id="avatarPlaceholder">☺</span><i>＋</i>
+    </button>
+    <div class="avatar-copy"><b>Твоя аватарка</b><span>Добавь фото, чтобы собеседник тебя узнавал</span></div>
+    <input id="avatarFile" type="file" accept="image/*" hidden>
+  </div>
+  <h2>Начать общение</h2>
+  <label>Твоё имя<input id="name" maxlength="32" placeholder="Например, Алексей"></label>
+  <label>Код комнаты<input id="room" maxlength="12" placeholder="Например, DUO123" autocapitalize="characters"></label>
+  <div class="actions"><button id="create">Создать комнату</button><button id="join" class="secondary">Войти по коду</button></div>
+  <p class="hint">Создай комнату и отправь другу код. Твоя аватарка будет видна участникам комнаты.</p>
+</section>
+<section id="chat" class="panel hidden">
+  <div class="roombar"><div>Комната <b id="roomLabel"></b><button id="copy" class="tiny">Копировать код</button></div><button id="leave" class="secondary tiny">Выйти</button></div>
+  <div class="chat-profile">
+    <button id="chatAvatarButton" class="avatar-button small" type="button" aria-label="Изменить аватарку">
+      <img id="chatAvatarPreview" alt="Твоя аватарка" hidden><span id="chatAvatarPlaceholder">☺</span><i>✎</i>
+    </button><div><b id="profileName">Гость</b><span>Нажми на фото, чтобы изменить аватарку</span></div>
+    <input id="chatAvatarFile" type="file" accept="image/*" hidden>
+  </div>
+  <div id="messages" aria-live="polite"></div>
+  <div class="composer"><textarea id="text" rows="2" maxlength="4000" placeholder="Напиши сообщение…"></textarea><button id="send">Отправить</button></div>
+  <button id="askAI" class="ai">✧ Спросить ИИ по переписке</button>
+  <p class="hint">Аватарка синхронизируется с собеседником автоматически.</p>
+</section>
+<footer>DuoChat · версия 0.5</footer></main>
 <script src="/socket.io/socket.io.js"></script><script type="module" src="/app.js"></script></body></html>
