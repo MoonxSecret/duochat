@@ -51,7 +51,7 @@ app.post("/api/ai",async(req,res)=>{
   if(!AI_BASE_URL||!AI_API_KEY) return res.status(503).json({error:"ИИ не подключён. Администратору сервера нужно настроить API."});
   const messages=Array.isArray(req.body?.messages)?req.body.messages.slice(-20):[];
   try{
-    const r=await fetch(`${AI_BASE_URL.replace(/\\/$/,"")}/chat/completions`,{
+    const r=await fetch(`${(AI_BASE_URL.endsWith("/") ? AI_BASE_URL.slice(0,-1) : AI_BASE_URL)}/chat/completions`,{
       method:"POST",headers:{"Content-Type":"application/json","Authorization":`Bearer ${AI_API_KEY}`},
       body:JSON.stringify({model,messages})
     });
