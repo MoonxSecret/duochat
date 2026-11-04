@@ -78,6 +78,8 @@ input[type="file"][hidden],
 .avatar-button i {
   z-index: 2;
   right: -5px !important;
-  bottom: -5px !important;
+  bottom: -5px !important;.avatar-button img[hidden] {
+  display: none !important;
+}
 }
 }
