@@ -3,6 +3,10 @@
   "appName": "DuoChat",
   "webDir": "public",
   "server": {
-    "androidScheme": "https"
+    "url": "https://myduochat.onrender.com",
+    "androidScheme": "https",
+    "allowNavigation": [
+      "myduochat.onrender.com"
+    ]
   }
 }
