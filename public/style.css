@@ -27,4 +27,45 @@
 .message-avatar[hidden]{display:none}
 .message-avatar.ai-avatar{border:0}
 .msg.ai-message .message-avatar{width:34px;height:34px;flex-basis:34px}
-.msg.system-message{display:block}
+.msg.system-message{display:block}/* FIX: avatar layout on mobile */
+.profile-picker .avatar-button,
+.chat-profile .avatar-button {
+  position: relative !important;
+  display: grid !important;
+  place-items: center !important;
+  box-sizing: border-box !important;
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px !important;
+  max-width: 64px !important;
+  min-height: 64px !important;
+  max-height: 64px !important;
+  flex: 0 0 64px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.chat-profile .avatar-button {
+  width: 43px !important;
+  height: 43px !important;
+  min-width: 43px !important;
+  max-width: 43px !important;
+  min-height: 43px !important;
+  max-height: 43px !important;
+  flex-basis: 43px !important;
+}
+
+.avatar-button img {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
+
+input[type="file"][hidden],
+[hidden] {
+  display: none !important;
+}
