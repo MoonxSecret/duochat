@@ -67,5 +67,17 @@
 
 input[type="file"][hidden],
 [hidden] {
-  display: none !important;
+  display: none !important;.avatar-button {
+  overflow: visible !important;
+}
+
+.avatar-button img {
+  overflow: hidden !important;
+}
+
+.avatar-button i {
+  z-index: 2;
+  right: -5px !important;
+  bottom: -5px !important;
+}
 }
