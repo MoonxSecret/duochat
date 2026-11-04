@@ -1,0 +1,8 @@
+{
+  "appId": "com.duochat.app",
+  "appName": "DuoChat",
+  "webDir": "public",
+  "server": {
+    "androidScheme": "https"
+  }
+}
