@@ -232,8 +232,8 @@ button:disabled { opacity: .6; }
 .avatar-button i {
   position: absolute;
   z-index: 3;
-  right: -5px;
-  bottom: -5px;
+right: 1px;
+bottom: 1px;
   display: grid;
   place-items: center;
   width: 23px;
@@ -278,8 +278,8 @@ button:disabled { opacity: .6; }
   width: 19px;
   height: 19px;
   font-size: 11px;
-  right: -2px;
-  bottom: -2px;
+  right: 1px;
+bottom: 1px;
 }
 
 /* Сообщения */
