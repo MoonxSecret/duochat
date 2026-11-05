@@ -49,7 +49,7 @@ function applyProfile(p){
 }
 function render(msg){
  if(document.querySelector(`[data-id="${CSS.escape(msg.id)}"]`))return;
- const const el=document.createElement("div");
+ const el=document.createElement("div");
 const isMine=msg.mine===true||msg.userId===myUserId;
 el.className="msg"+(isMine?" mine":"")+(msg.kind==="ai"?" ai-message":"")+(msg.kind==="system"?" system-message":"");
 el.style.alignSelf=isMine?"flex-end":"flex-start";
