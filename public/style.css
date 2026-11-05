@@ -488,20 +488,21 @@ body[data-background="neon"] {
 /* Улучшение мобильной версии DuoChat */
 @media (max-width: 768px) {
   #chat.panel {
-    padding: 14px !important;
-    background: rgba(35, 12, 55, 0.48) !important;
-    backdrop-filter: blur(9px);
-    -webkit-backdrop-filter: blur(9px);
+    padding: 12px !important;
+    background: rgba(35, 12, 55, 0.30) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
 
   #messages {
-    height: 38dvh !important;
-    min-height: 170px !important;
-    max-height: 320px !important;
+    height: 25dvh !important;
+    min-height: 130px !important;
+    max-height: 230px !important;
     flex: 0 0 auto !important;
+    background: rgba(20, 8, 35, 0.25) !important;
   }
 
   .chat-profile {
-    margin-bottom: 10px !important;
+    margin-bottom: 8px !important;
   }
 }
