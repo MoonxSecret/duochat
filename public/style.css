@@ -485,4 +485,23 @@ body[data-background="neon"] {
       ),
       url("/neon-city-mobile.png") !important;
   }
+/* Улучшение мобильной версии DuoChat */
+@media (max-width: 768px) {
+  #chat.panel {
+    padding: 14px !important;
+    background: rgba(35, 12, 55, 0.48) !important;
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+  }
+
+  #messages {
+    height: 38dvh !important;
+    min-height: 170px !important;
+    max-height: 320px !important;
+    flex: 0 0 auto !important;
+  }
+
+  .chat-profile {
+    margin-bottom: 10px !important;
+  }
 }
