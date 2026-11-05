@@ -461,4 +461,28 @@ h1, h2 {
   margin-left: 0 !important;
   margin-right: auto !important;
 }
+/* Фон чата — неоновый город */
 
+body[data-background="neon"] {
+  background-image:
+    linear-gradient(
+      rgba(12, 9, 24, var(--bg-opacity, 0.5)),
+      rgba(12, 9, 24, var(--bg-opacity, 0.5))
+    ),
+    url("/neon-city-desktop.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+@media (max-width: 768px) {
+  body[data-background="neon"] {
+    background-image:
+      linear-gradient(
+        rgba(12, 9, 24, var(--bg-opacity, 0.5)),
+        rgba(12, 9, 24, var(--bg-opacity, 0.5))
+      ),
+      url("/neon-city-mobile.png") !important;
+  }
+}
