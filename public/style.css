@@ -451,4 +451,12 @@ h1, h2 {
   white-space: pre-wrap !important;
   overflow-wrap: anywhere !important;
   word-break: break-word !important;
+}#messages > .msg.mine {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+#messages > .msg:not(.mine) {
+  margin-left: 0 !important;
+  margin-right: auto !important;
 }
