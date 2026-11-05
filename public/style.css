@@ -422,11 +422,21 @@ h1, h2 {
   max-width: 88% !important;
 }
 
+#messages {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 #messages .msg {
   display: flex !important;
-  width: auto !important;
+  width: fit-content !important;
   max-width: 88% !important;
-  align-items: flex-end;
+  flex: 0 0 auto !important;
+}
+
+#messages .msg.mine {
+  align-self: flex-end;
 }
 
 #messages .msg-content {
