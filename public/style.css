@@ -333,11 +333,12 @@ body {
   background:
     radial-gradient(ellipse at 50% 0%, #39205f 0%, transparent 55%),
     linear-gradient(160deg, #100b20, #1b1030 55%, #0c0918) !important;
+  background-color: rgba(12, 9, 24, var(--bg-opacity, 0.5)) !important;
   color: #f8f1ff;
 }
 
 .panel {
-  background: rgba(35, 22, 58, 0.62);
+  background: rgba(35, 22, 58, var(--bg-opacity, 0.5));
   border: 1px solid rgba(207, 160, 255, 0.28);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
