@@ -423,7 +423,7 @@ h1, h2 {
 }
 
 #messages .msg {
-  display: inline-flex !important;
+  display: flex !important;
   width: auto !important;
   max-width: 88% !important;
   align-items: flex-end;
