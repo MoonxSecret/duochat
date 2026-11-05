@@ -461,7 +461,3 @@ h1, h2 {
   margin-right: auto !important;
 }
 
-#messages > .msg {
-  align-self: flex-end !important;
-  margin-left: auto !important;
-}
