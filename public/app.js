@@ -47,26 +47,65 @@ function applyProfile(p){
   if(p.avatar){img.src=p.avatar;img.hidden=false;}else{img.hidden=true;}
  });
 }
+
 function render(msg){
  if(document.querySelector(`[data-id="${CSS.escape(msg.id)}"]`))return;
+
  const el=document.createElement("div");
- const isMine=msg.userId===myUserId||(!msg.userId&&msg.name===myName);
- el.className="msg"+(isMine?" mine":"")+(msg.kind==="ai"?" ai-message":"")+(msg.kind==="system"?" system-message":"");
+
+ const isMine=msg.mine===true ||
+  msg.userId===myUserId ||
+  (!msg.userId && msg.name===myName && msg.kind!=="ai");
+
+ el.className="msg"+
+  (isMine?" mine":"")+
+  (msg.kind==="ai"?" ai-message":"")+
+  (msg.kind==="system"?" system-message":"");
+
  el.style.alignSelf=isMine?"flex-end":"flex-start";
  el.dataset.id=msg.id;
+
  if(msg.userId)el.dataset.userId=msg.userId;
+
  if(msg.kind!=="system"){
-  const avatar=document.createElement("img");avatar.className="message-avatar";avatar.alt="";
+  const avatar=document.createElement("img");
+  avatar.className="message-avatar";
+  avatar.alt="";
+
   const profile=msg.userId?profiles.get(msg.userId):null;
-  if(msg.kind==="ai"){avatar.classList.add("ai-avatar");avatar.src="data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g"><stop stop-color="#b78cff"/><stop offset="1" stop-color="#6742d4"/></linearGradient></defs><rect width="64" height="64" rx="32" fill="url(#g)"/><path d="M32 10l5.5 15L53 31l-15.5 5.5L32 52l-5.5-15.5L11 31l15.5-6z" fill="white"/></svg>');}
-  else if(profile?.avatar){avatar.src=profile.avatar;}else{avatar.hidden=true;}
+
+  if(msg.kind==="ai"){
+   avatar.classList.add("ai-avatar");
+   avatar.src="data:image/svg+xml,"+encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g"><stop stop-color="#b78cff"/><stop offset="1" stop-color="#6742d4"/></linearGradient></defs><rect width="64" height="64" rx="32" fill="url(#g)"/><path d="M32 10l5.5 15L53 31l-15.5 5.5L32 52l-5.5-15.5L11 31l15.5-6z" fill="white"/></svg>'
+   );
+  }else if(profile?.avatar){
+   avatar.src=profile.avatar;
+  }else{
+   avatar.hidden=true;
+  }
+
   el.append(avatar);
  }
- const content=document.createElement("div");content.className="msg-content";
- const by=document.createElement("div");by.className="by";by.textContent=msg.kind==="ai"?"DuoChat AI":msg.name;
- const body=document.createElement("div");body.className="msg-text";body.textContent=msg.text;
- content.append(by,body);el.append(content);$("messages").append(el);$("messages").scrollTop=$("messages").scrollHeight;
+
+ const content=document.createElement("div");
+ content.className="msg-content";
+
+ const by=document.createElement("div");
+ by.className="by";
+ by.textContent=msg.kind==="ai"?"DuoChat AI":msg.name;
+
+ const body=document.createElement("div");
+ body.className="msg-text";
+ body.textContent=msg.text;
+
+ content.append(by,body);
+ el.append(content);
+
+ $("messages").append(el);
+ $("messages").scrollTop=$("messages").scrollHeight;
 }
+
 async function enter(room){
  currentRoom=room.toUpperCase();myName=$("name").value.trim()||"Гость";
  $("setup").classList.add("hidden");$("chat").classList.remove("hidden");$("roomLabel").textContent=currentRoom;
