@@ -187,7 +187,17 @@ function setOpacity(value){
 
 bgOpacity.value=localStorage.getItem("bgOpacity")||50;
 setOpacity(bgOpacity.value);
+const bgChoice = $("bgChoice");
 
+function setBackground(value) {
+  document.body.dataset.background = value;
+  localStorage.setItem("bgChoice", value);
+}
+
+bgChoice.value = localStorage.getItem("bgChoice") || "default";
+setBackground(bgChoice.value);
+
+bgChoice.onchange = () => setBackground(bgChoice.value);
 settingsButton.onclick=()=>{
   $("setup").classList.add("hidden");
   $("chat").classList.add("hidden");
