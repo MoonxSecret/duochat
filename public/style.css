@@ -416,28 +416,33 @@ h1, h2 {
   color: #fff;
 }
 
-/* Компактные облачка сообщений */
+/* Исправление расположения сообщений */
+
 #messages {
   display: flex !important;
   flex-direction: column !important;
-  align-items: flex-start !important;
+  align-items: stretch !important;
+  overflow-x: hidden !important;
 }
 
 #messages > .msg {
   display: flex !important;
   width: fit-content !important;
   max-width: 88% !important;
-  flex: 0 0 auto !important;
+  flex: 0 1 auto !important;
   align-self: flex-start !important;
+  margin: 8px 0 !important;
+  box-sizing: border-box !important;
 }
 
 #messages > .msg.mine {
   align-self: flex-end !important;
+  flex-direction: row-reverse !important;
 }
 
 #messages .msg-content {
   flex: 0 1 auto !important;
-  width: max-content !important;
+  width: auto !important;
   min-width: 0 !important;
   max-width: 100% !important;
 }
@@ -446,5 +451,4 @@ h1, h2 {
   white-space: pre-wrap !important;
   overflow-wrap: anywhere !important;
   word-break: break-word !important;
-  min-width: 0 !important;
 }
