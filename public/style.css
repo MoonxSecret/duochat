@@ -422,8 +422,21 @@ h1, h2 {
   max-width: 88% !important;
 }
 
+#messages .msg {
+  display: inline-flex !important;
+  width: auto !important;
+  max-width: 88% !important;
+  align-items: flex-end;
+}
+
 #messages .msg-content {
   flex: 0 1 auto !important;
+  width: auto !important;
   min-width: 0;
-  width: auto;
+}
+
+#messages .msg-text {
+  width: auto !important;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
