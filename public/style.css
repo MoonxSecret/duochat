@@ -436,7 +436,8 @@ h1, h2 {
 }
 
 #messages .msg-content {
-  flex: 1 1 auto !important;
+  flex: 0 1 auto !important;
+  width: max-content !important;
   min-width: 0 !important;
   max-width: 100% !important;
 }
