@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-title" content="DuoChat"><link rel="manifest" href="/manifest.webmanifest">
 <link rel="stylesheet" href="/style.css"><title>DuoChat</title></head>
 <body><main class="app">
-<header><div class="logo">D</div><div><h1>DuoChat</h1><p>Ваш общий чат с ИИ</p></div><span id="connection" class="status">● подключение…</span></header>
+<header><button id="settingsButton" class="tiny">⚙️ Настройки</button><div class="logo">D</div><div><h1>DuoChat</h1><p>Ваш общий чат с ИИ</p></div><span id="connection" class="status">● подключение…</span></header>
 <section id="setup" class="panel">
   <div class="profile-picker">
     <button id="avatarButton" class="avatar-button" type="button" aria-label="Выбрать аватарку">
@@ -21,6 +21,21 @@
   <label>Код комнаты<input id="room" maxlength="12" placeholder="Например, DUO123" autocapitalize="characters"></label>
   <div class="actions"><button id="create">Создать комнату</button><button id="join" class="secondary">Войти по коду</button></div>
   <p class="hint">Создай комнату и отправь другу код. Твоя аватарка будет видна участникам комнаты.</p>
+</section>
+  <section id="settingsPanel" class="panel hidden">
+  <h2>⚙️ Настройки DuoChat</h2>
+
+  <label for="bgOpacity">Прозрачность фона: <span id="opacityValue">50%</span></label>
+
+  <input
+    id="bgOpacity"
+    type="range"
+    min="0"
+    max="100"
+    value="50"
+  >
+
+  <button id="closeSettings" class="tiny">← Назад в чат</button>
 </section>
 <section id="chat" class="panel hidden">
   <div class="roombar"><div>Комната <b id="roomLabel"></b><button id="copy" class="tiny">Копировать код</button></div><button id="leave" class="secondary tiny">Выйти</button></div>
