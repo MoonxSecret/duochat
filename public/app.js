@@ -50,7 +50,7 @@ function applyProfile(p){
 function render(msg){
  if(document.querySelector(`[data-id="${CSS.escape(msg.id)}"]`))return;
  const el=document.createElement("div");
- el.className="msg"+(msg.userId===myUserId||(!msg.userId&&msg.name===myName)?" mine":"")+(msg.kind==="ai"?" ai-message":"")+(msg.kind==="system"?" system-message":"");
+ el.className="msg"+(msg.mine===true||msg.userId===myUserId?" mine":"")+(msg.kind==="ai"?" ai-message":"")+(msg.kind==="system"?" system-message":"");
  el.dataset.id=msg.id;
  if(msg.userId)el.dataset.userId=msg.userId;
  if(msg.kind!=="system"){
@@ -117,7 +117,7 @@ $("join").onclick=()=>{const room=$("room").value.trim();if(!/^[A-Z0-9]{6,12}$/i
 $("send").onclick=async()=>{
  const text=$("text").value.trim();if(!text||!currentRoom)return;
  if(!socket.connected)return alert("Нет соединения. Сообщение пока не отправлено.");
- const msg={id:crypto.randomUUID(),text,name:myName,createdAt:Date.now(),kind:"user",room:currentRoom,userId:myUserId};
+ const msg={id:crypto.randomUUID(),text,name:myName,createdAt:Date.now(),kind:"user",room:currentRoom,userId:myUserId,mine:true};
  await save(msg);render(msg);socket.emit("chat:message",msg);$("text").value="";
 };
 $("text").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();$("send").click();}});
