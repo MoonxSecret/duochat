@@ -459,4 +459,7 @@ h1, h2 {
 #messages > .msg:not(.mine) {
   margin-left: 0 !important;
   margin-right: auto !important;
+}#messages > .msg {
+  align-self: flex-end !important;
+  margin-left: auto !important;
 }
