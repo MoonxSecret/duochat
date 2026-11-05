@@ -53,9 +53,9 @@ function render(msg){
 
  const el=document.createElement("div");
 
- const isMine=msg.mine===true ||
-  msg.userId===myUserId ||
-  (!msg.userId && msg.name===myName && msg.kind!=="ai");
+ const isMine=msg.kind!=="ai" &&
+  msg.kind!=="system" &&
+  (msg.mine===true || msg.userId===myUserId);
 
  el.className="msg"+
   (isMine?" mine":"")+
