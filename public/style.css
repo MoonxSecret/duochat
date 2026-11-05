@@ -60,11 +60,11 @@ header p, .hint, footer {
 }
 
 .panel {
-  background: white;
-  border: 1px solid #e8e3f3;
+  background: rgba(35, 22, 58, 0.5);
+  border: 1px solid rgba(207, 160, 255, 0.28);
   border-radius: 20px;
   padding: 18px;
-  box-shadow: 0 8px 28px #32205b0a;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
 }
 
 label {
