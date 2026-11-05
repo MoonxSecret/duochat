@@ -174,4 +174,34 @@ $("askAI").onclick=async()=>{
   await save(msg);render(msg);socket.emit("chat:ai",msg);
  }catch(e){alert(e.message);}finally{btn.disabled=false;btn.textContent="✧ Спросить ИИ по переписке";}
 };
+const settingsButton=$("settingsButton");
+const settingsPanel=$("settingsPanel");
+const bgOpacity=$("bgOpacity");
+const opacityValue=$("opacityValue");
+
+function setOpacity(value){
+  document.documentElement.style.setProperty("--bg-opacity",value/100);
+  opacityValue.textContent=value+"%";
+  localStorage.setItem("bgOpacity",value);
+}
+
+bgOpacity.value=localStorage.getItem("bgOpacity")||50;
+setOpacity(bgOpacity.value);
+
+settingsButton.onclick=()=>{
+  $("setup").classList.add("hidden");
+  $("chat").classList.add("hidden");
+  settingsPanel.classList.remove("hidden");
+};
+
+$("closeSettings").onclick=()=>{
+  settingsPanel.classList.add("hidden");
+  if(currentRoom){
+    $("chat").classList.remove("hidden");
+  }else{
+    $("setup").classList.remove("hidden");
+  }
+};
+
+bgOpacity.oninput=()=>setOpacity(bgOpacity.value);
 if("serviceWorker" in navigator)navigator.serviceWorker.register("/sw.js");
