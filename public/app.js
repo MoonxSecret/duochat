@@ -62,7 +62,7 @@ function render(msg){
   (msg.kind==="ai"?" ai-message":"")+
   (msg.kind==="system"?" system-message":"");
 
- el.style.alignSelf=isMine?"flex-end":"flex-start";
+ el.style.setProperty("align-self",isMine?"flex-end":"flex-start","important");
  el.dataset.id=msg.id;
 
  if(msg.userId)el.dataset.userId=msg.userId;
