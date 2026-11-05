@@ -417,36 +417,33 @@ h1, h2 {
 }
 
 /* Компактные облачка сообщений */
-#messages .msg {
-  width: fit-content !important;
-  max-width: 88% !important;
-}
-
 #messages {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
 }
 
-#messages .msg {
+#messages > .msg {
   display: flex !important;
   width: fit-content !important;
   max-width: 88% !important;
   flex: 0 0 auto !important;
+  align-self: flex-start !important;
 }
 
-#messages .msg.mine {
-  align-self: flex-end;
+#messages > .msg.mine {
+  align-self: flex-end !important;
 }
 
 #messages .msg-content {
-  flex: 0 1 auto !important;
-  width: auto !important;
-  min-width: 0;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
 }
 
 #messages .msg-text {
-  width: auto !important;
-  max-width: 100%;
-  overflow-wrap: anywhere;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  min-width: 0 !important;
 }
