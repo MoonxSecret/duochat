@@ -503,12 +503,12 @@ body[data-background="neon"] {
   }
 
   #messages {
-    height: 25dvh !important;
-    min-height: 130px !important;
-    max-height: 230px !important;
-    flex: 0 0 auto !important;
-    background: rgba(20, 8, 35, 0.25) !important;
-  }
+  height: 18dvh !important;
+  min-height: 100px !important;
+  max-height: 160px !important;
+  flex: 0 0 auto !important;
+  background: rgba(20, 8, 35, 0.25) !important;
+}
 
   .chat-profile {
     margin-bottom: 8px !important;
