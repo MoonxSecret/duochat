@@ -1,5 +1,5 @@
 
-const CACHE = "duochat-v6";
+const CACHE = "duochat-v7";
 
 self.addEventListener("install", event => {
   event.waitUntil(
